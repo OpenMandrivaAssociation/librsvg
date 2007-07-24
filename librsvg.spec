@@ -6,8 +6,8 @@
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.16.1
-Release: 	%mkrel 3
+Version:	2.18.0
+Release: 	%mkrel 1
 License: 	LGPL
 Group:		System/Libraries
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
@@ -82,7 +82,6 @@ files to allow you to develop with librsvg.
 
 %build
 
-export MOZILLA_CONFIG=mozilla-firefox-config
 %configure2_5x --enable-gtk-doc
 %make
 
