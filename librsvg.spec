@@ -3,10 +3,11 @@
 %define gtkbinaryver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists gtk+-2.0); then pkg-config --variable=gtk_binary_version gtk+-2.0; else echo 0; fi)
 %define gtkver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists gtk+-2.0); then pkg-config --modversion gtk+-2.0; else echo 0; fi)
 %define lib_name %mklibname rsvg %{api_version} %{lib_major}
+%define libnamedev %mklibname -d rsvg %{api_version}
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.18.0
+Version:	2.18.1
 Release: 	%mkrel 1
 License: 	LGPL
 Group:		System/Libraries
@@ -54,14 +55,15 @@ fi
 
 #-----------------------------------------------------------
 
-%package -n %{lib_name}-devel
+%package -n %{libnamedev}
 Summary:	Libraries and include files for developing with librsvg
 Group:		Development/C
 Requires:	%{lib_name} = %{version}
 Provides:	%{name}%{api_version}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:  %mklibname -d rsvg %{api_version} %{lib_major}
 
-%description -n %{lib_name}-devel
+%description -n %{libnamedev}
 This package provides the necessary development libraries and include
 files to allow you to develop with librsvg.
 
@@ -113,7 +115,7 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/*/*.{la,a} \
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/loaders/*.so
 
-%files -n %{lib_name}-devel
+%files -n %{libnamedev}
 %defattr(-,root,root)
 %attr(644,root,root) %{_libdir}/*.la
 %{_libdir}/*.a
