@@ -14,7 +14,6 @@ Group:		System/Libraries
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 URL: 		http://librsvg.sourceforge.net/
 Requires:	%{lib_name} >= %{version}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:	gtk+2-devel >= 2.4.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libgsf-devel
