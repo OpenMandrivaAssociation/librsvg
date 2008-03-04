@@ -7,7 +7,7 @@
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.22.1
+Version:	2.22.2
 Release: 	%mkrel 1
 License: 	LGPL
 Group:		System/Libraries
