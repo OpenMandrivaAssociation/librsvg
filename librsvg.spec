@@ -43,11 +43,15 @@ Requires(postun):	gtk+2.0 >= %gtkver
 A library that uses libart and pango to render svg files.
 
 %post -n %{lib_name}
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 %{_bindir}/gdk-pixbuf-query-loaders %_lib > %{_sysconfdir}/gtk-2.0/gdk-pixbuf.loaders.%_lib
 
 %postun -n %{lib_name}
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 #only update on uninstall, upgrade will be done by post of new package
 if [ "$1" = "0" -a -x %{_bindir}/gdk-pixbuf-query-loaders ]; then 
   [ -x %{_bindir}/gdk-pixbuf-query-loaders ] && %{_bindir}/gdk-pixbuf-query-loaders %_lib > %{_sysconfdir}/gtk-2.0/gdk-pixbuf.loaders.%_lib
