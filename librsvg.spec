@@ -8,13 +8,12 @@
 Name:		librsvg
 Summary:	Raph's SVG library
 Version:	2.22.2
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 License: 	LGPL
 Group:		System/Libraries
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 URL: 		http://librsvg.sourceforge.net/
 Requires:	%{lib_name} >= %{version}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:	gtk+2-devel >= 2.4.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libgsf-devel
@@ -24,6 +23,7 @@ BuildRequires:	docbook-dtd31-sgml
 BuildRequires:	mozilla-firefox-devel
 BuildRequires:	glib2-devel >= 2.11
 BuildRequires:	libxt-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 A library that uses libart and pango to render svg files.
@@ -87,6 +87,7 @@ files to allow you to develop with librsvg.
 %setup -q
 
 %build
+export LIBS="-lm"
 
 %configure2_5x --enable-gtk-doc
 %make
@@ -131,5 +132,3 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/*/*.{la,a} \
 %files mozilla
 %defattr(-,root,root)
 %{_libdir}/mozilla/plugins/*.so
-
-
