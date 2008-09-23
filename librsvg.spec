@@ -7,8 +7,8 @@
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.22.2
-Release: 	%mkrel 3
+Version:	2.22.3
+Release: 	%mkrel 1
 License: 	LGPLv2+ and GPLv2+
 Group:		Graphics
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
@@ -20,7 +20,7 @@ BuildRequires:	libgsf-devel
 BuildRequires:	libcroco0.6-devel
 BuildRequires:	gtk-doc >= 0.9
 BuildRequires:	docbook-dtd31-sgml
-BuildRequires:	mozilla-firefox-devel
+BuildRequires:	xulrunner-devel
 BuildRequires:	glib2-devel >= 2.11
 BuildRequires:	libxt-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
