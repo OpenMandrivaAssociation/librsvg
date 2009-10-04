@@ -5,10 +5,13 @@
 %define lib_name %mklibname rsvg %{api_version} %{lib_major}
 %define libnamedev %mklibname -d rsvg %{api_version}
 
+# mozilla plugin requires xulruuner 1.8 not 1.9
+%define build_mozilla 0
+
 Name:		librsvg
 Summary:	Raph's SVG library
 Version:	2.26.0
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 License: 	LGPLv2+ and GPLv2+
 Group:		Graphics
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
@@ -20,7 +23,6 @@ BuildRequires:	libgsf-devel
 BuildRequires:	libcroco0.6-devel
 BuildRequires:	gtk-doc >= 0.9
 BuildRequires:	docbook-dtd31-sgml
-BuildRequires:	xulrunner-devel
 BuildRequires:	glib2-devel >= 2.11
 BuildRequires:	libxt-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -72,14 +74,16 @@ This package provides the necessary development libraries and include
 files to allow you to develop with librsvg.
 
 #-----------------------------------------------------------
-
+%if %build_mozilla
 %package mozilla
 Summary:        Mozilla plugin for displaying SVG files
 Group:          Networking/WWW
+BuildRequires:	xulrunner-devel
 
 %description mozilla
 This package provides the necessary development libraries and include
 files to allow you to develop with librsvg.
+%endif
 
 #-----------------------------------------------------------
 
@@ -98,7 +102,9 @@ export LIBS="-lm"
 
 #remove unpackaged files
 rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/*/*.{la,a} \
+%if %build_mozilla
  $RPM_BUILD_ROOT%{_libdir}/mozilla/plugins/*.{la,a} \
+%endif
  $RPM_BUILD_ROOT%{_docdir}/librsvg
 
 %clean
@@ -129,6 +135,8 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/*/*.{la,a} \
 %{_libdir}/pkgconfig/*
 %{_datadir}/gtk-doc/html/*
 
+%if %build_mozilla
 %files mozilla
 %defattr(-,root,root)
 %{_libdir}/mozilla/plugins/*.so
+%endif
