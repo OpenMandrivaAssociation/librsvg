@@ -11,7 +11,7 @@
 Name:		librsvg
 Summary:	Raph's SVG library
 Version:	2.26.0
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 License: 	LGPLv2+ and GPLv2+
 Group:		Graphics
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
