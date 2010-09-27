@@ -8,8 +8,8 @@
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.31.0
-Release: 	%mkrel 2
+Version:	2.32.0
+Release: 	%mkrel 1
 License: 	LGPLv2+ and GPLv2+
 Group:		Graphics
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
