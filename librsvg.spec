@@ -9,11 +9,11 @@
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.34.0
-Release: 	%mkrel 2
+Version:	2.34.1
+Release: 	%mkrel 1
 License: 	LGPLv2+ and GPLv2+
 Group:		Graphics
-Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
+Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 URL: 		http://librsvg.sourceforge.net/
 Requires:	%{lib_name} >= %{version}
 BuildRequires:	gtk+2-devel >= 2.4.0
