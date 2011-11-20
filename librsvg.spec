@@ -1,5 +1,6 @@
 %define api_version	2
 %define lib_major	2
+%define gir_major	2.0
 %define lib_name	%mklibname rsvg %{api_version} %{lib_major}
 %define develname	%mklibname -d rsvg %{api_version}
 %define girname		%mklibname rsvg-gir %{gir_major}
@@ -73,15 +74,14 @@ files to allow you to develop with librsvg.
 %build
 %configure2_5x \
 	--disable-static \
-	--enable-introspection=yes \
-	--enable-gtk-doc
+	--enable-introspection=yes
 
 %make
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-find %{buildroot} -name *.la | xargs rm
+find %{buildroot} -name "*.la" -delete
 
 #remove unpackaged files
 rm -fr %{buildroot}%{_docdir}/librsvg
@@ -109,6 +109,7 @@ rm -fr %{buildroot}%{_docdir}/librsvg
 %{_libdir}/*.so
 %{_includedir}/librsvg-2.0
 %{_libdir}/pkgconfig/*
+%{_datadir}/gir-1.0/Rsvg-2.0.gir
 %{_datadir}/gtk-doc/html/*
 
 %if %build_mozilla
