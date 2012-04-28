@@ -10,7 +10,7 @@
 
 Name:		librsvg
 Summary:	Raph's SVG library
-Version:	2.34.2
+Version:	2.36.1
 Release: 	1
 License: 	LGPLv2+ and GPLv2+
 Group:		Graphics
@@ -88,15 +88,11 @@ rm -fr %{buildroot}%{_docdir}/librsvg
 
 %files 
 %doc AUTHORS COPYING COPYING.LIB ChangeLog NEWS README
-%{_bindir}/rsvg
 %{_bindir}/rsvg-convert
-%{_bindir}/rsvg-view
 %{_bindir}/rsvg-view-3
 %{_libdir}/gtk-2.0/*/engines/*.so
 %{_libdir}/gdk-pixbuf-2.0/*/loaders/*.so
-%{_datadir}/pixmaps/*
 %{_datadir}/themes/bubble/gtk-2.0/*
-%{_datadir}/themes/bubble/gtk-3.0/*
 %{_mandir}/man1/*
 
 %files -n %{lib_name}
