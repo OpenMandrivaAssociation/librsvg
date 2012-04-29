@@ -17,6 +17,7 @@ Group:		Graphics
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 URL: 		http://librsvg.sourceforge.net/
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
+BuildRequires:  gdk-pixbuf2.0
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(libcroco-0.6)
