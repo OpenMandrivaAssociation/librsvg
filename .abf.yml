@@ -1,4 +1,3 @@
-removed_sources:
-  librsvg-2.36.4.tar.xz: 1e0152e6745bac9632207252c67dda2299010db4
+
 sources:
-  librsvg-2.39.0.tar.xz: 7a2ec4b405d729d142ef413c12067a185e81cd06
+  librsvg-2.40.2.tar.xz: 6a6b4d8071934550aaf19251a1fdb3fa865beff5
