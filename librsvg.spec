@@ -12,8 +12,8 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.40.5
-Release:	2
+Version:	2.40.6
+Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
@@ -78,7 +78,7 @@ files to allow you to develop with librsvg.
 %apply_patches
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--enable-introspection=yes \
 	--disable-gtk-doc \
