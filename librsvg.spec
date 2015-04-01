@@ -1,18 +1,18 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
-%define api	2
-%define major	2
-%define gimajor	2.0
-%define libname	%mklibname rsvg %{api} %{major}
-%define devname	%mklibname -d rsvg %{api}
-%define girname	%mklibname rsvg-gir %{gimajor}
+%define api 2
+%define major 2
+%define gimajor 2.0
+%define libname %mklibname rsvg %{api} %{major}
+%define devname %mklibname -d rsvg %{api}
+%define girname %mklibname rsvg-gir %{gimajor}
 
 # mozilla plugin requires xulruuner 1.8 not 1.9
 %define build_mozilla 0
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.40.8
+Version:	2.40.9
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
