@@ -12,7 +12,7 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.40.9
+Version:	2.40.12
 Release:	2
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
