@@ -12,12 +12,12 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.40.12
-Release:	2
+Version:	2.40.16
+Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	http://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
 Patch0:		10_rsvg-gz.patch
 
 BuildRequires:	gdk-pixbuf2.0
