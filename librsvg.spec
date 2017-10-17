@@ -105,6 +105,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_bindir}/rsvg-view-3
 #{_libdir}/gtk-2.0/*/engines/*.so
 #{_datadir}/themes/bubble/gtk-2.0/*
+%{_datadir}/thumbnailers/*.thumbnailer
 %{_mandir}/man1/*
 
 %files -n %{libname}
