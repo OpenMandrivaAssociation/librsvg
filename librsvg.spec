@@ -13,7 +13,7 @@
 Summary:	Raph's SVG library
 Name:		librsvg
 Version:	2.40.19
-Release:	1
+Release:	2
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
@@ -38,6 +38,8 @@ A library that uses libart and pango to render svg files.
 %package -n %{libname}
 Summary:	Raph's SVG library
 Group:		System/Libraries
+Requires(post):	gdk-pixbuf2.0
+Requires(postun):gdk-pixbuf2.0
 
 %description -n %{libname}
 A library that uses libart and pango to render svg files.
