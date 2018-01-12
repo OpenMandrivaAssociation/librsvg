@@ -12,17 +12,18 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.40.20
+Version:	2.42.0
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
 Source0:	http://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
-Patch0:		10_rsvg-gz.patch
+Patch0:		librsvg-2.42.0-link-libdl.patch
 
 BuildRequires:	gdk-pixbuf2.0
 BuildRequires:	vala-tools
 BuildRequires:	vala-devel
+BuildRequires:	rust
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
@@ -102,7 +103,7 @@ rm -f %{buildroot}%{_sysconfdir}/gtk-2.0/gdk-pixbuf.loaders
 rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 
 %files
-%doc AUTHORS COPYING COPYING.LIB ChangeLog NEWS README
+%doc AUTHORS COPYING COPYING.LIB ChangeLog NEWS
 %{_bindir}/rsvg-convert
 %{_bindir}/rsvg-view-3
 #{_libdir}/gtk-2.0/*/engines/*.so

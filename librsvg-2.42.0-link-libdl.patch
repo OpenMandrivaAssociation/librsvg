@@ -1,0 +1,10 @@
+--- librsvg-2.42.0/Makefile.am.omv~	2018-01-12 01:36:16.122610447 +0100
++++ librsvg-2.42.0/Makefile.am	2018-01-12 01:36:33.935646975 +0100
+@@ -172,6 +172,7 @@ librsvg_@RSVG_API_MAJOR_VERSION@_la_LDFL
+ librsvg_@RSVG_API_MAJOR_VERSION@_la_LIBADD = \
+ 	$(LIBRSVG_LIBS) 	\
+ 	$(LIBM)			\
++	-ldl			\
+ 	$(RUST_LIB)
+ 
+ librsvgincdir = $(includedir)/librsvg-$(RSVG_API_VERSION)/librsvg
