@@ -24,6 +24,7 @@ BuildRequires:	gdk-pixbuf2.0
 BuildRequires:	vala-tools
 BuildRequires:	vala-devel
 BuildRequires:	rust
+BuildRequires:	cargo
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
