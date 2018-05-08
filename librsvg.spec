@@ -12,7 +12,7 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.42.3
+Version:	2.42.4
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
@@ -24,6 +24,8 @@ BuildRequires:	gdk-pixbuf2.0
 BuildRequires:	vala-tools
 BuildRequires:	vala-devel
 BuildRequires:	rust
+BuildRequires:	pkgconfig(cairo) >= 1.15.4
+BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
