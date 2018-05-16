@@ -10,10 +10,12 @@
 # mozilla plugin requires xulruuner 1.8 not 1.9
 %define build_mozilla 0
 
+%bcond_with vala
+
 Summary:	Raph's SVG library
 Name:		librsvg
 Version:	2.42.4
-Release:	1
+Release:	2
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
@@ -21,8 +23,10 @@ Source0:	http://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}
 Patch0:		librsvg-2.42.0-link-libdl.patch
 
 BuildRequires:	gdk-pixbuf2.0
+%if %{with vala}
 BuildRequires:	vala-tools
 BuildRequires:	vala-devel
+%endif
 BuildRequires:	rust
 BuildRequires:	cargo
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
@@ -60,6 +64,14 @@ Obsoletes:	%{mklibname -d rsvg 2 2} < 2.36.1
 This package provides the necessary development libraries and include
 files to allow you to develop with librsvg.
 
+%package vala-devel
+Summary:	VALA bindings for librsvg
+Group:		Development/Other
+Requires:	%{devname} = %{EVRD}
+
+%description vala-devel
+VALA bindings for librsvg
+
 %package -n %{girname}
 Summary:	GObject Introspection interface description for %{name}
 Group:		System/Libraries
@@ -88,7 +100,11 @@ files to allow you to develop with librsvg.
 	--disable-static \
 	--enable-introspection=yes \
 	--disable-gtk-doc \
+%if %{with vala}
 	--enable-vala \
+%else
+	--disable-vala \
+%endif
 	--enable-pixbuf-loader \
 	--disable-gtk-theme
 
@@ -127,9 +143,13 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_libdir}/pkgconfig/*
 %{_datadir}/gir-1.0/Rsvg-2.0.gir
 %{_datadir}/gtk-doc/html/*
+
+%if %{with vala}
+%files vala-devel
 %dir %{_datadir}/vala
 %dir %{_datadir}/vala/vapi
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
+%endif
 
 %if %{build_mozilla}
 %files mozilla
