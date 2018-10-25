@@ -26,6 +26,7 @@ BuildRequires:	gdk-pixbuf2.0
 %if %{with vala}
 BuildRequires:	vala-tools
 BuildRequires:	vala-devel
+BuildRequires:	pkgconfig(vapigen)
 %endif
 BuildRequires:	rust
 BuildRequires:	cargo
