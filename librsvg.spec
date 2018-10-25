@@ -10,11 +10,11 @@
 # mozilla plugin requires xulruuner 1.8 not 1.9
 %define build_mozilla 0
 
-%bcond_with vala
+%bcond_without vala
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.42.5
+Version:	2.42.7
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
@@ -105,8 +105,7 @@ files to allow you to develop with librsvg.
 %else
 	--disable-vala \
 %endif
-	--enable-pixbuf-loader \
-	--disable-gtk-theme
+	--enable-pixbuf-loader
 
 %make
 
