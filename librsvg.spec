@@ -20,8 +20,6 @@ License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
 Source0:	http://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
-Patch0:		librsvg-2.42.0-link-libdl.patch
-
 BuildRequires:	gdk-pixbuf2.0
 %if %{with vala}
 BuildRequires:	vala-tools
