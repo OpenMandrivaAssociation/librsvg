@@ -9,6 +9,7 @@
 
 # mozilla plugin requires xulruuner 1.8 not 1.9
 %define build_mozilla 0
+%define _disable_rebuild_configure 1
 
 %bcond_without vala
 
