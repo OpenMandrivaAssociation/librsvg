@@ -14,8 +14,8 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.42.7
-Release:	4
+Version:	2.45.5
+Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
@@ -93,8 +93,7 @@ files to allow you to develop with librsvg.
 %endif
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %configure \
@@ -108,10 +107,10 @@ files to allow you to develop with librsvg.
 %endif
 	--enable-pixbuf-loader
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 #remove unpackaged files
 rm -fr %{buildroot}%{_docdir}/librsvg
@@ -121,8 +120,10 @@ rm -f %{buildroot}%{_libdir}/mozilla/
 rm -f %{buildroot}%{_sysconfdir}/gtk-2.0/gdk-pixbuf.loaders
 rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 
-%files
-%doc AUTHORS COPYING COPYING.LIB ChangeLog NEWS
+%find_lang %{name}
+
+%files -f %{name}.lang
+%doc AUTHORS NEWS README.md
 %{_bindir}/rsvg-convert
 %{_bindir}/rsvg-view-3
 #{_libdir}/gtk-2.0/*/engines/*.so
@@ -146,8 +147,6 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 
 %if %{with vala}
 %files vala-devel
-%dir %{_datadir}/vala
-%dir %{_datadir}/vala/vapi
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
 %endif
 
