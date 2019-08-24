@@ -124,7 +124,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %files -f %{name}.lang
 %doc AUTHORS NEWS README.md
 %{_bindir}/rsvg-convert
-%{_bindir}/rsvg-view-3
+#{_bindir}/rsvg-view-3
 #{_libdir}/gtk-2.0/*/engines/*.so
 #{_datadir}/themes/bubble/gtk-2.0/*
 %{_datadir}/thumbnailers/*.thumbnailer
