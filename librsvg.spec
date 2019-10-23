@@ -11,27 +11,26 @@
 %define build_mozilla 0
 %define _disable_rebuild_configure 1
 
-%bcond_without vala
-
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.46.2
+Version:	2.46.3
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		http://librsvg.sourceforge.net/
 Source0:	http://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	gdk-pixbuf2.0
-%if %{with vala}
+BuildRequires:	vala
 BuildRequires:	vala-tools
 BuildRequires:	vala-devel
 BuildRequires:	pkgconfig(vapigen)
-%endif
 BuildRequires:	rust
 BuildRequires:	cargo
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcroco-0.6)
@@ -99,11 +98,7 @@ files to allow you to develop with librsvg.
 	--disable-static \
 	--enable-introspection=yes \
 	--disable-gtk-doc \
-%if %{with vala}
 	--enable-vala \
-%else
-	--disable-vala \
-%endif
 	--enable-pixbuf-loader
 
 %make_build
@@ -144,10 +139,8 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_datadir}/gir-1.0/Rsvg-2.0.gir
 %{_datadir}/gtk-doc/html/*
 
-%if %{with vala}
 %files vala-devel
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
-%endif
 
 %if %{build_mozilla}
 %files mozilla
