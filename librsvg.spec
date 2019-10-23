@@ -139,10 +139,8 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_datadir}/gir-1.0/Rsvg-2.0.gir
 %{_datadir}/gtk-doc/html/*
 
-%if %{with vala}
 %files vala-devel
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
-%endif
 
 %if %{build_mozilla}
 %files mozilla
