@@ -45,6 +45,7 @@ BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcroco-0.6)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libtiff-4)
 Provides:	%{name}%{api} = %{version}-%{release}
 Requires:	%{libname} >= %{version}
 Requires:	python
@@ -53,6 +54,7 @@ BuildRequires:	devel(libcairo)
 BuildRequires:	devel(libgio-2.0)
 BuildRequires:	devel(libglib-2.0)
 BuildRequires:	devel(libcroco-0.6)
+BuildRequires:	devel(libtiff)
 BuildRequires:	devel(libxml2)
 BuildRequires:	devel(libz)
 BuildRequires:	devel(libbz2)
