@@ -200,9 +200,9 @@ rm -f %{buildroot}%{_libdir}/mozilla/
 rm -f %{buildroot}%{_sysconfdir}/gtk-2.0/gdk-pixbuf.loaders
 rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 
-%find_lang %{name}
+#find_lang %{name}
 
-%files -f %{name}.lang
+%files
 %doc AUTHORS NEWS README.md
 %{_bindir}/rsvg-convert
 #{_bindir}/rsvg-view-3
