@@ -40,6 +40,7 @@ BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
