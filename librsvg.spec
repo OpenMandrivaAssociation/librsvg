@@ -20,7 +20,7 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.52.7
+Version:	2.54.0
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
@@ -40,12 +40,15 @@ BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gio-2.0)
+BuildRequires:	pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcroco-0.6)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libtiff-4)
+BuildRequires:	pkgconfig(libjpeg)
+BuildRequires:	python3dist(docutils)
 Provides:	%{name}%{api} = %{version}-%{release}
 Requires:	%{libname} >= %{version}
 Requires:	python
@@ -72,6 +75,7 @@ BuildRequires:	devel(libfontconfig)
 BuildRequires:	devel(libharfbuzz)
 BuildRequires:	devel(libfribidi)
 BuildRequires:	devel(libexpat)
+BuildRequires:	devel(libjpeg)
 BuildRequires:	devel(libXrender)
 BuildRequires:	devel(libXft)
 BuildRequires:	devel(libpixman-1)
