@@ -47,6 +47,7 @@ BuildRequires:	pkgconfig(libcroco-0.6)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libtiff-4)
 BuildRequires:	pkgconfig(libjpeg)
+BuildRequires:	python3dist(docutils)
 Provides:	%{name}%{api} = %{version}-%{release}
 Requires:	%{libname} >= %{version}
 Requires:	python
