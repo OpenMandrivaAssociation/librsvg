@@ -209,7 +209,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 #find_lang %{name}
 
 %files
-%doc AUTHORS NEWS README.md
+%doc AUTHORS NEWS* README.md
 %{_bindir}/rsvg-convert
 #{_bindir}/rsvg-view-3
 #{_libdir}/gtk-2.0/*/engines/*.so
