@@ -20,7 +20,7 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.54.5
+Version:	2.55.1
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
@@ -229,7 +229,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_includedir}/librsvg-2.0
 %{_libdir}/pkgconfig/*
 %{_datadir}/gir-1.0/Rsvg-2.0.gir
-%optional %{_datadir}/gtk-doc/html/*
+#optional %{_datadir}/gtk-doc/html/*
 
 %files vala-devel
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
