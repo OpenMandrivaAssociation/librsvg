@@ -177,9 +177,12 @@ cd build32
 cd "${REALTOP}"
 %endif
 
+%if %{cross_compiling}
+cd ../librsvg-2.40.21
+%endif
 export CONFIGURE_TOP="$(pwd)"
-mkdir build
-cd build
+mkdir Build
+cd Build
 %configure \
 	--enable-introspection=yes \
 	--disable-gtk-doc \
@@ -190,13 +193,19 @@ cd build
 %if %{with compat32}
 %make_build -C ../librsvg-2.40.21/build32
 %endif
-%make_build -C build
+%if %{cross_compiling}
+cd ../librsvg-2.40.21
+%endif
+%make_build -C Build
 
 %install
 %if %{with compat32}
 %make_install -C ../librsvg-2.40.21/build32
 %endif
-%make_install -C build
+%if %{cross_compiling}
+cd ../librsvg-2.40.21
+%endif
+%make_install -C Build
 
 #remove unpackaged files
 rm -fr %{buildroot}%{_docdir}/librsvg
