@@ -88,6 +88,8 @@ BuildRequires:	devel(libXext)
 BuildRequires:	devel(libXau)
 BuildRequires:	devel(libXdmcp)
 BuildRequires:	devel(liblzo2)
+BuildRequires:	devel(liblzma)
+BuildRequires:	devel(libzstd)
 %endif
 
 %description
