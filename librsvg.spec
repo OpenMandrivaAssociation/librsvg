@@ -50,6 +50,10 @@ BuildRequires:	pkgconfig(libtiff-4)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(lzo2)
 BuildRequires:	python3dist(docutils)
+%ifarch %{x86_64}
+# FIXME without this, configure barfs on znver1. Need to find a proper fix.
+BuildRequires:	libssh2.so.1()(64bit)
+%endif
 Provides:	%{name}%{api} = %{version}-%{release}
 Requires:	%{libname} >= %{version}
 Requires:	python
