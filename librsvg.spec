@@ -20,15 +20,15 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.57.1
+Version:	2.57.2
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
-Url:		http://librsvg.sourceforge.net/
-Source0:	http://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://librsvg.sourceforge.net/
+Source0:	https://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
 # This is the last version that doesn't use rust. Needed while
 # rust fails badly at crosscompiling or any other -m32 alternative.
-Source1:	http://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.21.tar.xz
+Source1:	https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.21.tar.xz
 BuildRequires:	gdk-pixbuf2.0
 BuildRequires:	vala
 BuildRequires:	vala-tools
