@@ -1,3 +1,5 @@
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
 # rsvg is used by wine
 %ifarch %{x86_64}
 %bcond_without compat32
