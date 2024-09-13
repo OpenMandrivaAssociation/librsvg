@@ -38,6 +38,7 @@ BuildRequires:	vala-devel
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	rust
 BuildRequires:	cargo
+BuildRequires:	meson
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
@@ -191,11 +192,14 @@ cd ../librsvg-2.40.21
 export CONFIGURE_TOP="$(pwd)"
 mkdir Build
 cd Build
-%configure \
-	--enable-introspection=yes \
-	--disable-gtk-doc \
-	--enable-vala \
-	--enable-pixbuf-loader
+%meson \
+	-Dintrospection=true \
+	-Ddocs=false \
+	-Dvala=true \
+ 	-Dtests=false \
+  	-Davif=true \
+	-Dpixbuf=true \
+ 	-Dpixbuf-loader=true
 
 %build
 %if %{with compat32}
@@ -204,7 +208,7 @@ cd Build
 %if %{cross_compiling}
 cd ../librsvg-2.40.21
 %endif
-%make_build -C Build
+%meson_build
 
 %install
 %if %{with compat32}
@@ -213,7 +217,7 @@ cd ../librsvg-2.40.21
 %if %{cross_compiling}
 cd ../librsvg-2.40.21
 %endif
-%make_install -C Build
+%meson_install
 
 #remove unpackaged files
 rm -fr %{buildroot}%{_docdir}/librsvg
