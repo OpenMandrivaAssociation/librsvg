@@ -1,4 +1,5 @@
 %global optflags %{optflags} -Wno-incompatible-function-pointer-types
+%undefine _debugsource_packages
 
 # rsvg is used by wine
 %ifarch %{x86_64}
@@ -188,18 +189,24 @@ cd "${REALTOP}"
 
 %if %{cross_compiling}
 cd ../librsvg-2.40.21
-%endif
 export CONFIGURE_TOP="$(pwd)"
 mkdir Build
 cd Build
+%configure \
+       --enable-introspection=yes \
+       --disable-gtk-doc \
+       --enable-vala \
+       --enable-pixbuf-loader
+%else
 %meson \
-	-Dintrospection=true \
-	-Ddocs=false \
-	-Dvala=true \
+	-Dintrospection=enabled \
+	-Ddocs=disabled \
+	-Dvala=enabled \
  	-Dtests=false \
-  	-Davif=true \
-	-Dpixbuf=true \
- 	-Dpixbuf-loader=true
+	-Davif=enabled \
+	-Dpixbuf=enabled \
+	-Dpixbuf-loader=enabled
+%endif
 
 %build
 %if %{with compat32}
@@ -254,6 +261,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 
 %files vala-devel
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
+%{_datadir}/vala/vapi/librsvg-2.0.deps
 
 %if %{build_mozilla}
 %files mozilla
