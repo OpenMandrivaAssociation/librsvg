@@ -39,6 +39,7 @@ BuildRequires:	vala-devel
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	rust
 BuildRequires:	cargo
+BuildRequires:	cargo-c
 BuildRequires:	meson
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
