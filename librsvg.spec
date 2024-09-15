@@ -32,6 +32,7 @@ Source0:	https://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version
 # This is the last version that doesn't use rust. Needed while
 # rust fails badly at crosscompiling or any other -m32 alternative.
 Source1:	https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.21.tar.xz
+Source2:	vendor.tar.xz
 BuildRequires:	gdk-pixbuf2.0
 BuildRequires:	vala
 BuildRequires:	vala-tools
@@ -170,7 +171,7 @@ files to allow you to develop with librsvg.
 %endif
 
 %prep
-%autosetup -p1 -b 1
+%autosetup -a1 -p1 -b 1
 %if %{with compat32}
 REALTOP="$(pwd)"
 cd ../librsvg-2.40.21
