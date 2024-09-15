@@ -43,6 +43,7 @@ BuildRequires:	cargo-c
 BuildRequires:	meson
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
+BuildRequires:	pkgconfig(dav1d)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(gi-docgen)
