@@ -241,11 +241,10 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %files
 %doc AUTHORS NEWS* README.md
 %{_bindir}/rsvg-convert
-#{_bindir}/rsvg-view-3
-#{_libdir}/gtk-2.0/*/engines/*.so
-#{_datadir}/themes/bubble/gtk-2.0/*
 %{_datadir}/thumbnailers/*.thumbnailer
+%ifnarch aarch64
 %{_mandir}/man1/*
+%endif
 
 %files -n %{libname}
 %{_libdir}/gdk-pixbuf-2.0/*/loaders/*.so
