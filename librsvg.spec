@@ -205,7 +205,7 @@ cd Build
        --enable-vala \
        --enable-pixbuf-loader
 %else
-%global optflags %{optflags} -fuse-ld=mold
+#global optflags %{optflags} -fuse-ld=mold
 export CC=gcc
 export CXX=g++
 %meson \
@@ -225,7 +225,7 @@ export CXX=g++
 %if %{cross_compiling}
 cd ../librsvg-2.40.21
 %endif
-%global optflags %{optflags} -fuse-ld=mold
+#global optflags %{optflags} -fuse-ld=mold
 export CC=gcc
 export CXX=g++
 %meson_build
