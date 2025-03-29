@@ -191,6 +191,7 @@ cd build32
 	--enable-pixbuf-loader
 cd "${REALTOP}"
 %endif
+%cargo_prep -v vendor
 
 %if %{cross_compiling}
 cd ../librsvg-2.40.21
