@@ -39,6 +39,7 @@ BuildRequires:	vala-tools
 BuildRequires:	vala-devel
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	rust
+BuildRequires:	rust-packaging
 BuildRequires:	cargo
 BuildRequires:	cargo-c
 BuildRequires:	meson
