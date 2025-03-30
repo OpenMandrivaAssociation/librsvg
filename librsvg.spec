@@ -269,9 +269,9 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_includedir}/librsvg-2.0
 %{_libdir}/pkgconfig/*
 %{_datadir}/gir-1.0/Rsvg-2.0.gir
-#optional %{_datadir}/gtk-doc/html/*
 
 %files vala-devel
+%doc %{_docdir}/Rsvg-2.0
 %{_datadir}/vala/vapi/librsvg-2.0.vapi
 %{_datadir}/vala/vapi/librsvg-2.0.deps
 
