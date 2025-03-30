@@ -174,8 +174,10 @@ files to allow you to develop with librsvg.
 %endif
 
 %prep
-%autosetup -p1 -b 1 -a 1
-cat >>Cargo.toml <<EOF
+%autosetup -p1 -b 1
+tar xf %{S:2}
+mkdir .cargo
+cat >>.cargo/config.toml <<EOF
 
 [source.crates-io]
 replace-with = "vendored-sources"
@@ -213,7 +215,7 @@ cd Build
 %else
 %meson \
 	-Dintrospection=enabled \
-	-Ddocs=disabled \
+	-Ddocs=enabled \
 	-Dvala=enabled \
  	-Dtests=false \
 	-Davif=enabled \
@@ -253,9 +255,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %doc AUTHORS NEWS* README.md
 %{_bindir}/rsvg-convert
 %{_datadir}/thumbnailers/*.thumbnailer
-%ifnarch %{aarch64}
 %{_mandir}/man1/*
-%endif
 
 %files -n %{libname}
 %{_libdir}/gdk-pixbuf-2.0/*/loaders/*.so
