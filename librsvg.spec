@@ -24,7 +24,7 @@
 Summary:	Raph's SVG library
 Name:		librsvg
 Version:	2.60.0
-Release:	1
+Release:	2
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		https://librsvg.sourceforge.net/
@@ -43,6 +43,7 @@ BuildRequires:	rust
 BuildRequires:	cargo
 BuildRequires:	cargo-c
 BuildRequires:	meson
+BuildRequires:  mold
 BuildRequires:	pkgconfig(cairo) >= 1.15.4
 BuildRequires:	pkgconfig(cairo-png) >= 1.15.4
 BuildRequires:	pkgconfig(dav1d)
@@ -213,6 +214,9 @@ cd Build
        --enable-vala \
        --enable-pixbuf-loader
 %else
+%global optflags %{optflags} -fuse-ld=mold
+export CC=gcc
+export CXX=g++
 %meson \
 	-Dintrospection=enabled \
 	-Ddocs=enabled \
@@ -230,6 +234,9 @@ cd Build
 %if %{cross_compiling}
 cd ../librsvg-2.40.21
 %endif
+%global optflags %{optflags} -fuse-ld=mold
+export CC=gcc
+export CXX=g++
 %meson_build
 
 %install
