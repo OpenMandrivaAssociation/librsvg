@@ -211,7 +211,7 @@ cd Build
        --enable-introspection=yes \
        --disable-gtk-doc \
        --enable-vala \
-       --enable-pixbuf-loader
+       --disable-pixbuf-loader
 %else
 %meson \
 	-Dintrospection=enabled \
