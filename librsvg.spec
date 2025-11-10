@@ -24,7 +24,7 @@
 Summary:	Raph's SVG library
 Name:		librsvg
 Version:	2.61.3
-Release:	1
+Release:	3
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		https://librsvg.sourceforge.net/
@@ -218,9 +218,8 @@ cd Build
 	-Ddocs=enabled \
 	-Dvala=enabled \
  	-Dtests=false \
-	-Davif=enabled \
-	-Dpixbuf=enabled \
-	-Dpixbuf-loader=enabled
+	-Davif=disabled \
+	-Dpixbuf-loader=disabled
 %endif
 
 %build
