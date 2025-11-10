@@ -257,7 +257,7 @@ rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 %{_mandir}/man1/*
 
 %files -n %{libname}
-%{_libdir}/gdk-pixbuf-2.0/*/loaders/*.so
+#{_libdir}/gdk-pixbuf-2.0/*/loaders/*.so
 %{_libdir}/librsvg-%{api}.so.%{major}*
 
 %files -n %{girname}
