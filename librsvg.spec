@@ -248,12 +248,14 @@ rm -f %{buildroot}%{_libdir}/mozilla/
 rm -f %{buildroot}%{_sysconfdir}/gtk-2.0/gdk-pixbuf.loaders
 rm -f %{buildroot}%{_datadir}/pixmaps/svg-viewer.svg
 
+rm -f %{buildroot}%{_datadir}/thumbnailers/librsvg.thumbnailer
+
 #find_lang %{name}
 
 %files
 %doc AUTHORS NEWS* README.md
 %{_bindir}/rsvg-convert
-%{_datadir}/thumbnailers/*.thumbnailer
+#{_datadir}/thumbnailers/*.thumbnailer
 %{_mandir}/man1/*
 
 %files -n %{libname}
