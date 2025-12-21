@@ -34,6 +34,11 @@ Source0:	https://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version
 Source1:	https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.21.tar.xz
 # Rust sucks
 Source2:	vendor.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gdk-pixbuf2.0
 BuildRequires:	vala
 BuildRequires:	vala-tools
