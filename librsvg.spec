@@ -23,7 +23,7 @@
 
 Summary:	Raph's SVG library
 Name:		librsvg
-Version:	2.61.3
+Version:	2.62.1
 Release:	1
 License:	LGPLv2+ and GPLv2+
 Group:		Graphics
@@ -58,7 +58,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.4.0
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcroco-0.6)
-BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libxml-2.0) >= 2.15.2
 BuildRequires:	pkgconfig(libtiff-4)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(lzo2)
@@ -76,7 +76,7 @@ BuildRequires:	devel(libgio-2.0)
 BuildRequires:	devel(libglib-2.0)
 BuildRequires:	devel(libcroco-0.6)
 BuildRequires:	devel(libtiff)
-BuildRequires:	devel(libxml2)
+BuildRequires:	devel(libxml2) >= 2.15.2
 BuildRequires:	devel(libz)
 BuildRequires:	devel(libbz2)
 BuildRequires:	devel(libffi)
