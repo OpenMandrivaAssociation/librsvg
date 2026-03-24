@@ -39,7 +39,7 @@ BuildRequires:	cargo-c
 
 # Rust target dla 32-bit
 %if %{with compat32}
-BuildRequires:	rust-std-static(i686-unknown-linux-gnu)
+BuildRequires:	rust-std-static rust-src
 %endif
 
 BuildRequires:	gdk-pixbuf2.0
