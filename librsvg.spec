@@ -167,7 +167,7 @@ export CC="gcc -m32"
 export CXX="g++ -m32"
 export PKG_CONFIG_LIBDIR=%{_prefix}/lib/pkgconfig
 
-export CARGO_BUILD_TARGET=i686-unknown-linux-gnu
+#export CARGO_BUILD_TARGET=i686-unknown-linux-gnu
 export CARGO_TARGET_I686_UNKNOWN_LINUX_GNU_LINKER="gcc -m32"
 export RUSTFLAGS="-C target-feature=-crt-static"
 
