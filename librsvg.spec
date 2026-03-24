@@ -121,10 +121,18 @@ GObject Introspection data.
 Summary:	32-bit librsvg
 Group:		System/Libraries
 
+%description -n %{lib32name}
+A library that uses cairo and pango to render SVG files.
+
+
 %package -n %{dev32name}
 Summary:	32-bit development files
 Group:		Development/C
 Requires:	%{lib32name} = %{version}-%{release}
+
+%description -n %{dev32name}
+A library that uses cairo and pango to render SVG files.
+
 %endif
 
 # --------------------
