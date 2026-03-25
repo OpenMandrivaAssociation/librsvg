@@ -25,7 +25,7 @@ License:	LGPLv2+ and GPLv2+
 Group:		Graphics
 Url:		https://librsvg.sourceforge.net/
 Source0:	https://download.gnome.org/sources/librsvg/%{url_ver}/%{name}-%{version}.tar.xz
-Source2:	vendor.tar.xz
+Source1:	vendor.tar.xz
 
 BuildRequires:	autoconf
 BuildRequires:	automake
