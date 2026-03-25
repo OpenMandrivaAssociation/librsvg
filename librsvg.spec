@@ -108,6 +108,14 @@ Requires:	%{libname} = %{version}-%{release}
 %description -n %{devname}
 Development files for librsvg.
 
+%package vala-devel
+Summary:	VALA bindings for librsvg
+Group:		Development/Other
+Requires:	%{devname} = %{EVRD}
+
+%description vala-devel
+VALA bindings for librsvg
+
 %package -n %{girname}
 Summary:	GObject Introspection data for librsvg
 Group:		System/Libraries
@@ -214,6 +222,7 @@ rm -rf %{buildroot}%{_docdir}/librsvg
 %files
 %doc AUTHORS NEWS* README.md
 %{_bindir}/rsvg-convert
+%{_datadir}/thumbnailers/*.thumbnailer
 %{_mandir}/man1/*
 
 %files -n %{libname}
@@ -227,6 +236,12 @@ rm -rf %{buildroot}%{_docdir}/librsvg
 %{_libdir}/*.so
 %{_includedir}/librsvg-2.0
 %{_libdir}/pkgconfig/*
+%{_datadir}/gir-1.0/Rsvg-2.0.gir
+
+%files vala-devel
+%doc %{_docdir}/Rsvg-2.0
+%{_datadir}/vala/vapi/librsvg-2.0.vapi
+%{_datadir}/vala/vapi/librsvg-2.0.deps
 
 %if %{with compat32}
 %files -n %{lib32name}
@@ -234,6 +249,7 @@ rm -rf %{buildroot}%{_docdir}/librsvg
 %{_prefix}/lib/librsvg-%{api}.so.%{major}*
 
 %files -n %{dev32name}
+%doc %{_datadir}/doc/Rsvg-2.0/
 %{_prefix}/lib/*.so
 %{_prefix}/lib/pkgconfig/*
 %endif
