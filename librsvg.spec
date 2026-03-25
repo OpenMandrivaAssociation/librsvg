@@ -229,7 +229,7 @@ rm -rf %{buildroot}%{_docdir}/librsvg
 
 %if %{with compat32}
 %files -n %{lib32name}
-%{_prefix}/lib/gdk-pixbuf-2.0/*/loaders/*.so
+#{_prefix}/lib/gdk-pixbuf-2.0/*/loaders/*.so
 %{_prefix}/lib/librsvg-%{api}.so.%{major}*
 
 %files -n %{dev32name}
