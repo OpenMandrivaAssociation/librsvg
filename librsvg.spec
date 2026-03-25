@@ -181,6 +181,7 @@ export RUSTFLAGS="-C target-feature=-crt-static"
 
 meson setup . .. \
     --libdir=%{_prefix}/lib \
+    --prefix=%{_prefix} \
     -Dintrospection=disabled \
     -Ddocs=disabled \
     -Dvala=disabled \
