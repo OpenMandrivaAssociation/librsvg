@@ -1,0 +1,11 @@
+diff -up librsvg-2.40.21/rsvg-private.h.omv~ librsvg-2.40.21/rsvg-private.h
+--- librsvg-2.40.21/rsvg-private.h.omv~	2026-04-06 16:48:42.266927134 +0200
++++ librsvg-2.40.21/rsvg-private.h	2026-04-06 16:48:56.077028148 +0200
+@@ -33,6 +33,7 @@
+ 
+ #include <libxml/SAX.h>
+ #include <libxml/xmlmemory.h>
++#include <libxml/tree.h>
+ #include <pango/pango.h>
+ #include <glib.h>
+ #include <glib-object.h>
