@@ -106,6 +106,11 @@ BuildRequires:	devel(libXdmcp)
 BuildRequires:	devel(liblzo2)
 BuildRequires:	devel(liblzma)
 BuildRequires:	devel(libzstd)
+BuildRequires:	cross-i686-openmandriva-linux-gnu-binutils
+BuildRequires:	cross-i686-openmandriva-linux-gnu-libc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-gcc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-kernel-headers
+BuildRequires:	cross-i686-openmandriva-linux-gnu-clang
 %endif
 
 # 100+: For the non-Rust version
