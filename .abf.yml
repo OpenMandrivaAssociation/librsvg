@@ -1,4 +1,4 @@
 sources:
   librsvg-2.40.21.tar.xz: 063d1ca696633d43c462e1ca3e8be3145559d954
-  librsvg-2.62.3.tar.xz: 0f594f54aaeeb8a2cee2d1bf1d82b0c28dbafad3
-  vendor.tar.xz: f221af1a80c5d656c835306d9bfc90015703a7f5
+  librsvg-2.63.2.tar.xz: 9df10178f51ead6c8df927eaaec8c4433ccf9f44
+  vendor.tar.xz: 0c21e0ddd91c6d010db9cc3f386cafcce81a0364
